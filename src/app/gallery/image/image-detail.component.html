@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-3 col-md-6">
+      <div [ngStyle]="{'background-image':'url('+ image.url +')'}" class="img-container paper">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 caption-row">
+      <span id="caption">
+        {{image.caption}}
+      </span>
+    </div>
+  </div>
+</div>
+
+<div>
+  <button class="btn btn-lg" style="background-color: #7B0082;color:white" (click)="goBack()">Back to Gallery</button>
+</div>
+<br/>
+<br/>
+<br/>

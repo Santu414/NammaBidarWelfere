@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well" style="font-size: 20px;background-color: #7B0082;color: white">
+                Bidar District Photos
+            </div>
+            <button class="btn btn-lg" style="width: 140px;background-color: #7B0082;color: white" [class.active]="filterBy==='all'"
+                (click)="filterBy='all'">All</button>
+            <button class="btn btn-lg btn-info" style="width: 140px;background-color: #7B0082;color: white" [class.active]="filterBy==='bidar'"
+                (click)="filterBy='bidar'">Bidar</button>
+            <button class="btn btn-lg btn-info" style="width: 140px;background-color: #7B0082;color: white" [class.active]="filterBy==='humnabad'"
+                (click)="filterBy='humnabad'">HumanBad</button>
+            <button class="btn btn-lg btn-info" style="width: 140px;background-color: #7B0082;color: white" [class.active]="filterBy==='bhalki'"
+                (click)="filterBy='bhalki'">Bhalki</button>
+            <button class="btn btn-lg btn-info" style="width: 140px;background-color: #7B0082;color: white" [class.active]="filterBy==='aurad'"
+                (click)="filterBy='aurad'">Aurad</button>
+            <button class="btn btn-lg btn-info" style="width: 140px;background-color: #7B0082;color: white" [class.active]="filterBy==='basavakalyan'"
+                (click)="filterBy='basavakalyan'">Basavakalyan</button>
+<br/><br/><br/>
+            <div *ngFor="let image of (visibleImages | imageFilter:filterBy)">
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a [routerLink]="['/image', image.id]">
+                        <img src="{{image.url}}" class="tn" width="200" height="160" class="img-responsive">
+                        <p>{{image.location}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

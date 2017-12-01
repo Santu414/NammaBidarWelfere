@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="well">
+        <button type="button" class="btn btn-primary" style="background-color: #7B0082; color: white">Location</button>
+      </div>
+      <agm-map 
+      [latitude]="lat" 
+      [longitude]="lng"
+      [zoom]="zoom"
+      [disableDefaultUI]=false
+      [zoomControl]="false"
+      >
+
+
+        <agm-marker 
+        *ngFor="let m of markers;let i= index"
+        (markerClick)="clickedMarker(m,i)"
+        [latitude]="m.lat" 
+        [longitude]="m.lng"
+        [markerDraggable]="m.draggable"
+        (dragEnd)="markerDragEnd(m,$event)"
+        >
+        
+        
+      </agm-marker>
+      </agm-map>
+      
+    </div>
+    <div class="col-md-4">
+      <div class="well">
+        <button type="button" class="btn btn-primary" style="background-color: #7B0082; color: white">Contact US</button>
+      </div>
+      <label class="glyphicon glyphicon-earphone" style="color: #4CB1D7">
+        <span style="font-size: 20px"> 91-9902566119</span>
+      </label>
+      <br/>
+      <label class="glyphicon glyphicon-earphone" style="color: #4CB1D7">
+        <span style="font-size: 20px"> 91-9845505997</span>
+      </label>
+      <br/>
+      <label class="glyphicon glyphicon-earphone" style="color: #4CB1D7">
+        <span style="font-size: 20px"> 91-8722291111</span>
+      </label>
+      <br/>
+      <label class="glyphicon glyphicon-earphone" style="color: #4CB1D7">
+        <span style="font-size: 20px"> 91-7259432795</span>
+      </label>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>

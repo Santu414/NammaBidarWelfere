@@ -1,0 +1,9 @@
+.customDiv{
+    margin:3px;
+    min-height:200px;
+    background-color:rgb(54, 107, 175);
+    text-align:center;
+    font-size:large;
+    color: white;
+    border-radius: 15px;
+}
